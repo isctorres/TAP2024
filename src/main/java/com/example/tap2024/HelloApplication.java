@@ -2,6 +2,7 @@ package com.example.tap2024;
 
 import com.example.tap2024.modelos.Conexion;
 import com.example.tap2024.vistas.Calculadora;
+import com.example.tap2024.vistas.EmpleadoTaqueria;
 import com.example.tap2024.vistas.Memorama;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ public class HelloApplication extends Application {
 
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menParcial2, menSalir;
-    private MenuItem mitCalculadora, mitSalir, mitMemorama;
+    private MenuItem mitCalculadora, mitSalir, mitMemorama, mitEmpleado;
     private BorderPane bdpPanel;
     @Override
     public void start(Stage stage) throws IOException {
@@ -47,8 +48,11 @@ public class HelloApplication extends Application {
         mitMemorama = new MenuItem("Memorama");
         mitMemorama.setOnAction(event -> new Memorama());
 
+        mitEmpleado = new MenuItem("Empleado Taqueria");
+        mitEmpleado.setOnAction(event -> new EmpleadoTaqueria());
+
         menParcial1 = new Menu("Primer Parcial");
-        menParcial1.getItems().addAll(mitCalculadora,mitMemorama);
+        menParcial1.getItems().addAll(mitCalculadora,mitMemorama, mitEmpleado);
 
         /* Menu segundo parcial */
         menParcial2 = new Menu("Segundo Parcial");
